@@ -12,15 +12,5 @@ import { filter } from 'rxjs';
 })
 export class AppComponent implements OnInit {
   private readonly router: Router = inject(Router);
-  ngOnInit() {
-    this.router.events
-      .pipe(
-        filter((event): event is NavigationEnd => event instanceof NavigationEnd)
-      )
-      .subscribe((event: NavigationEnd) => {
-        if (event.url === '/' || event.url === '/home') {
-          this.router.navigate(['/home']);
-        }
-      });
-  }
+  ngOnInit() {}
 }

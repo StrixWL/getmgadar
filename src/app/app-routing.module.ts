@@ -11,9 +11,10 @@ import { ScheduleComponent } from './pages/schedule/schedule.component';
 const routes: Routes = [
   {
     path: '',
+    redirectTo: '/home',
     pathMatch: 'full',
-    canActivate: [AuthGuard],
-    component: AppComponent,
+    // canActivate: [AuthGuard],
+    // component: AppComponent,
   },
   {
     path: 'bmic',
@@ -28,16 +29,16 @@ const routes: Routes = [
     component: HomePageComponent,
   },
   {
-    path: 'about',
-    pathMatch: 'full',
-    canActivate: [AuthGuard],
-    component: AboutComponent,
-  },
-  {
     path: 'pricing',
     pathMatch: 'full',
     canActivate: [AuthGuard],
     component: PricingComponent,
+  },
+  {
+    path: 'about',
+    pathMatch: 'full',
+    canActivate: [AuthGuard],
+    component: AboutComponent,
   },
   {
     path: 'schedule',

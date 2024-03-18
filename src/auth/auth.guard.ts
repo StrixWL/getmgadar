@@ -15,10 +15,7 @@ export class AuthGuard {
   private readonly router: Router = inject(Router);
   private authService = inject(AuthService);
 
-  public canActivate(
-    route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot
-  ): boolean | Observable<boolean> {
+  public canActivate(): Observable<boolean> {
     return this.authService.getAuthState().pipe(
       map((state) => {
         if (!state) {
